@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arraste o scroll para cima</title>
+        <link rel="stylesheet" type="text/css" href="style.css"
+    </head>
+    <body>
+        <h3>Arraste o scroll</h3>
+        <h2 class="text">Arraste o scroll </h2>
+        <section>
+            <h2 class="innerText">Arraste o scroll </h2>
+        </section>
+        <div class="container">
+            <h2>
+                Pepe Pizza 
+            </h2>
+            <p>
+                Somos uma empresa onde temos os melhores preços junto com a maior qualidade do mercado...
+            </p>
+          
+        </div>
+        <script>
+            let section= document.querySelector('section');
+            let text = document.querySelector('.text');
+            let innerText = document.querySelector('.innerText')
+            window.addEventListener('scroll', function(){ 
+                let value = window.scrollY;
+                section.style.clipPath = "circle("+ value +"px at center center)";
+                text.style.left = 100 - value / 5 + '%';
+                innerText.style.left = 100 - value / 5 + '%';
+            })
+        </script>
+    </body>
+</html>
